@@ -12,5 +12,16 @@ def sort_data(data):
         if not datum:
             continue
         working_dicts.append(datum)
-    sorted_input = sorted(working_dicts, key=lambda dict_to_sort: dict_to_sort['date'])
+    sorted_input = sorted(working_dicts, key=lambda dict_to_sort: dict_to_sort['date'], reverse=True)
     return sorted_input
+
+
+def get_executed(sorted_data):
+    executed_list = []
+    for one_list in sorted_data:
+        if one_list['state'].lower() == 'executed':
+            executed_list.append(one_list)
+    five_only_list = []
+    for n in range(0, 5):
+        five_only_list.append(executed_list[n])
+    return five_only_list
