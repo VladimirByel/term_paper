@@ -25,3 +25,11 @@ def get_executed(sorted_data):
     for n in range(0, 5):
         five_only_list.append(executed_list[n])
     return five_only_list
+
+
+def get_date(lists):
+    for list_ in lists:
+        list_['date'] = list_['date'][0:10]
+        list_['date'] = list_["date"].split("-")
+        list_['date'] = ".".join(list_['date'])
+    return lists
