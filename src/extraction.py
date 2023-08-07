@@ -12,5 +12,5 @@ def sort_data(data):
         if not datum:
             continue
         working_dicts.append(datum)
-    sorted_input = sorted(working_dicts, key=lambda u: u['date'])
+    sorted_input = sorted(working_dicts, key=lambda dict_to_sort: dict_to_sort['date'])
     return sorted_input
