@@ -6,7 +6,7 @@ def get_json():
         return json.load(file)
 
 
-def sort_data(data):
+def sort_by_date(data):
     working_dicts = []
     for datum in data:
         if not datum:
@@ -31,5 +31,5 @@ def get_date(lists):
     for list_ in lists:
         list_['date'] = list_['date'][0:10]
         list_['date'] = list_["date"].split("-")
-        list_['date'] = ".".join(list_['date'])
+        list_['date'] = f"{list_['date'][2]}.{list_['date'][1]}.{list_['date'][0]}"
     return lists
